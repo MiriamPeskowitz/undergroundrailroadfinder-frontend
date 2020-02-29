@@ -14,18 +14,26 @@ class Site {
 
 	renderSiteCard = () => {
 		//create container card for each site  
+		console.log("here")
 		let siteDiv = document.createElement('div')
 		div.setAttribute('class', 'site-card' )
 		div.setAttribute('data-id', `${this.id}` )
 		
 		//put data on the siteDiv. image, name, address, description 
 		//create image 
-		let src = this.image
-		let name = this.name
-		let address = this.address
-		let description = this.description
-		siteDiv.appendChild(src, name, address, description)
-			
+		let src = document.createElement('src')
+		src.innerHTML = this.image
+
+		let name = document.createElement('p')
+		nameSpace.innerHTML = this.name
+		
+		let address = document.createElement('p')
+		addressSpace.innerHTML = this.address
+
+		let descriptionSpace = document.createElement('p')
+		descriptionSpace = this.description
+		siteDiv.appendChild(src, nameSpace, addressSpace, descriptionSpace)
+
 
 		//attach to main section
 		const main = document.getElementById("underground-railroad-cards")

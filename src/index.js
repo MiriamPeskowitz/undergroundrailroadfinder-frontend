@@ -11,9 +11,9 @@ document.addEventListener('DOMContentLoaded', () => {
 })
 
 function loadAllCards() {
-	debugger
-	fetch(sitesURL)
-		.then(response => response.json())
+    fetch(sitesURL)
+	    .then(response => response.json())
+
 		.then(siteCardJSON => {
 			siteCardJSON.forEach((site) => {
 				const newSite = new Site(site)
@@ -22,6 +22,7 @@ function loadAllCards() {
 				console.log('here')
 			})
 		})
+
 	}
 
 
