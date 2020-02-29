@@ -25,7 +25,15 @@ function loadAllCards() {
 
 	}
 
+const write = document.querySelector('.writingPrompt')
+write.addEventListener('click', openJournal())
 
+const openJournal = () => {
+	//insert "form" with title, body 
+	//is this a new class? note.js yes. 
+	// andit will need a Post fetch, with options 
+	
+}
 
 		//HERE< old way was the long stretch of code, new will be the 
 			//make an instance of the class sitecard class )

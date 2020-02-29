@@ -30,12 +30,18 @@ class Site {
 
 		let descriptionSpace = document.createElement('p')
 		descriptionSpace = this.description
+		
+		let writingPrompt = document.createElement('p')
+		writingPrompt.innerHTML = "Click here to journal about this site."
+		//how do I do this? js adds a big space, textarea? p? a form/ 
+		//add other attributes, like the visited boolean 
 
 		//put it all together
 		siteDiv.append(img)
 		siteDiv.append(nameSpace)
 		siteDiv.append(addressSpace)
 		siteDiv.append(descriptionSpace)
+		siteDiv.append(writingPrompt)
 		
 //for img, add alt tag 
 		//attach sitediv to main section
