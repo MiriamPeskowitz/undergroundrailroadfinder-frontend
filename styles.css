@@ -26,32 +26,41 @@ div.card {
 	border-radius: 5px;
 }
 
+#underground-railroad-cards {
+	
+}
+
+
 p { 
 	font-size: 1.5em;
 	color: slate;
 	font-family: Helvetica;
  }
 
- li {
+ul {
+	list-style: none;
+}
+
+li {
  	font-size: 1.05em;
  	list-style: none;
  	padding-right: 20px;
  }
 
 
-  button {
+button {
     font-size: .65em;
     color: #fff;
     background-color: gray;
     border-radius: 10px;
   }
   
-  button.release-button {
+button.release-button {
     float: right;
     background-color: #3f4752;
   }
 
-  @media only screen and (min-width: 500px) {
+@media only screen and (min-width: 500px) {
     main {
       grid-template-columns: 1fr 1fr;
     }
