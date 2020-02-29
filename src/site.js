@@ -19,8 +19,8 @@ class Site {
 		siteDiv.setAttribute('data-id', `${this.id}` )
 		
 		//put data on the siteDiv. image, name, address, description  
-		let src = document.createElement('src')
-		src.innerHTML = this.image
+		let img = document.createElement('img')
+		img.src = this.image
 
 		let nameSpace = document.createElement('p')
 		nameSpace.innerHTML = this.name
@@ -32,12 +32,12 @@ class Site {
 		descriptionSpace = this.description
 
 		//put it all together
-		siteDiv.append(src)
+		siteDiv.append(img)
 		siteDiv.append(nameSpace)
 		siteDiv.append(addressSpace)
 		siteDiv.append(descriptionSpace)
 		
-
+//for img, add alt tag 
 		//attach sitediv to main section
 		const main = document.getElementById("underground-railroad-cards")
 		main.appendChild(siteDiv)
