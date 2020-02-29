@@ -9,33 +9,36 @@ class Site {
 		this.description = siteObject.description 
 		this.visited = siteObject.visited
 		this.image = siteObject.image
-		Site.allSites.push(this)
+		Site.allSites.push(this)//clarify what this does and whether I need it 
 	}
 
 	renderSiteCard = () => {
 		//create container card for each site  
-		console.log("here")
 		let siteDiv = document.createElement('div')
-		div.setAttribute('class', 'site-card' )
-		div.setAttribute('data-id', `${this.id}` )
+		siteDiv.setAttribute('class', 'site-card' )
+		siteDiv.setAttribute('data-id', `${this.id}` )
 		
-		//put data on the siteDiv. image, name, address, description 
-		//create image 
+		//put data on the siteDiv. image, name, address, description  
 		let src = document.createElement('src')
 		src.innerHTML = this.image
 
-		let name = document.createElement('p')
+		let nameSpace = document.createElement('p')
 		nameSpace.innerHTML = this.name
 		
-		let address = document.createElement('p')
+		let addressSpace = document.createElement('p')
 		addressSpace.innerHTML = this.address
 
 		let descriptionSpace = document.createElement('p')
 		descriptionSpace = this.description
-		siteDiv.appendChild(src, nameSpace, addressSpace, descriptionSpace)
 
+		//put it all together
+		siteDiv.append(src)
+		siteDiv.append(nameSpace)
+		siteDiv.append(addressSpace)
+		siteDiv.append(descriptionSpace)
+		
 
-		//attach to main section
+		//attach sitediv to main section
 		const main = document.getElementById("underground-railroad-cards")
 		main.appendChild(siteDiv)
 

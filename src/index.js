@@ -18,8 +18,8 @@ function loadAllCards() {
 			siteCardJSON.forEach((site) => {
 				const newSite = new Site(site)
 				
-				(".underground-railroad-cards").innerHTML = newSite.renderSiteCard()
-				console.log('here')
+				let card = document.querySelector(".underground-railroad-cards")
+				card = newSite.renderSiteCard()
 			})
 		})
 
