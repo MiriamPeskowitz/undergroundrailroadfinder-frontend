@@ -2,8 +2,8 @@
 //on window load, do I see a signin? 
 
 const baseURL = "http://localhost:3000/"
-const usersURL = `${base_URL}/users`
-const sitesURL = `${base_URL}/sites` 
+const usersURL = `${baseURL}/users`
+const sitesURL = `${baseURL}/sites` 
 
 document.addEventListener('DOMContentLoaded', () => {
 	//Should it do anything else on load? 
@@ -11,18 +11,21 @@ document.addEventListener('DOMContentLoaded', () => {
 })
 
 function loadAllCards() {
+	debugger
 	fetch(sitesURL)
 		.then(response => response.json())
 		.then(siteCardJSON => {
-			siteCardJSON.forEach(site) => {
+			siteCardJSON.forEach((site) => {
 				const newSite = new Site(site)
-				(place in Dom where it should go).innerHTML = newSite.renderSiteCard()
-			}
-		}
+				
+				(".underground-railroad-cards").innerHTML = newSite.renderSiteCard()
+				console.log('here')
+			})
+		})
+	}
 
 
 
 		//HERE< old way was the long stretch of code, new will be the 
 			//make an instance of the class sitecard class )
-}
 
