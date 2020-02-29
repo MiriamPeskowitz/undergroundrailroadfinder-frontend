@@ -5,6 +5,9 @@ const baseURL = "http://localhost:3000/"
 const usersURL = `${baseURL}/users`
 const sitesURL = `${baseURL}/sites` 
 
+let card = document.querySelector(".underground-railroad-cards")
+
+
 document.addEventListener('DOMContentLoaded', () => {
 	//Should it do anything else on load? 
 	loadAllCards()
@@ -17,22 +20,27 @@ function loadAllCards() {
 		.then(siteCardJSON => {
 			siteCardJSON.forEach((site) => {
 				const newSite = new Site(site)
-				
-				let card = document.querySelector(".underground-railroad-cards")
 				card = newSite.renderSiteCard()
 			})
 		})
 
 	}
 
-const write = document.querySelector('.writingPrompt')
-write.addEventListener('click', openJournal())
+let write = document.getElementsByClassName('.writingPrompt')
+//need to get the event.target or something else, this is where it gets complex. but add the form first 
+
+write.addEventListener('click', () => console.log('here')
+	// () => {
+	// openJournal()}
+)
 
 const openJournal = () => {
+
+	console.log('writingForm')
 	//insert "form" with title, body 
 	//is this a new class? note.js yes. 
 	// andit will need a Post fetch, with options 
-	
+
 }
 
 		//HERE< old way was the long stretch of code, new will be the 

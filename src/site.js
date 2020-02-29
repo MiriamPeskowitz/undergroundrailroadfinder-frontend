@@ -21,18 +21,19 @@ class Site {
 		//put data on the siteDiv. image, name, address, description  
 		let img = document.createElement('img')
 		img.src = this.image
+		img.alt = this.name
 
 		let nameSpace = document.createElement('p')
 		nameSpace.innerHTML = this.name
 		
 		let addressSpace = document.createElement('p')
-		addressSpace.innerHTML = this.address
+		addressSpace.innerHTML = `${this.address}, ${this.state}, ${this.zipcode}`
 
 		let descriptionSpace = document.createElement('p')
 		descriptionSpace = this.description
 		
 		let writingPrompt = document.createElement('p')
-		writingPrompt.innerHTML = "Click here to journal about this site."
+		writingPrompt.innerHTML = "Click here to write about this site."
 		//how do I do this? js adds a big space, textarea? p? a form/ 
 		//add other attributes, like the visited boolean 
 
@@ -43,7 +44,7 @@ class Site {
 		siteDiv.append(descriptionSpace)
 		siteDiv.append(writingPrompt)
 		
-//for img, add alt tag 
+
 		//attach sitediv to main section
 		const main = document.getElementById("underground-railroad-cards")
 		main.appendChild(siteDiv)
