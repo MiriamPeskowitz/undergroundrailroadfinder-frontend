@@ -18,7 +18,7 @@ class Site {
 		siteDiv.setAttribute('class', 'site-card' )
 		siteDiv.setAttribute('data-id', `${this.id}` )
 		
-		//put data on the siteDiv. image, name, address, description  
+		//put data on the siteDiv. image, name, address, description, etc
 		let img = document.createElement('img')
 		img.src = this.image
 		img.alt = this.name
@@ -34,7 +34,10 @@ class Site {
 		
 		let writingPrompt = document.createElement('p')
 		writingPrompt.innerHTML = "Click here to write about this site."
-		//how do I do this? js adds a big space, textarea? p? a form/ 
+		writingPrompt.setAttribute('class', 'open-writing-form' )
+		writingPrompt.setAttribute('building-data-id', `${this.id}` )
+		//when clicked a  form/ 
+		
 		//add other attributes, like the visited boolean 
 
 		//put it all together
@@ -45,7 +48,7 @@ class Site {
 		siteDiv.append(writingPrompt)
 		
 
-		//attach sitediv to main section
+		//attach siteDiv to main section
 		const main = document.getElementById("underground-railroad-cards")
 		main.appendChild(siteDiv)
 

@@ -4,6 +4,7 @@
 const baseURL = "http://localhost:3000/"
 const usersURL = `${baseURL}/users`
 const sitesURL = `${baseURL}/sites` 
+const notesURL = `${baseURL}/notes`
 
 let card = document.querySelector(".underground-railroad-cards")
 
@@ -12,6 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	//Should it do anything else on load? 
 	loadAllCards()
 })
+
 
 function loadAllCards() {
     fetch(sitesURL)
@@ -26,17 +28,18 @@ function loadAllCards() {
 
 	}
 
-let write = document.getElementsByClassName('.writingPrompt')
+let write = document.getElementsByClassName('.open-writing-form')
 //need to get the event.target or something else, this is where it gets complex. but add the form first 
 
-write.addEventListener('click', () => console.log('here')
+write.addEventListener('click', (event) => console.log('here')
 	// () => {
 	// openJournal()}
 )
 
-const openJournal = () => {
-
+const openNewNote = (event) => {
+			
 	console.log('writingForm')
+	
 	//insert "form" with title, body 
 	//is this a new class? note.js yes. 
 	// andit will need a Post fetch, with options 
