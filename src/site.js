@@ -30,12 +30,17 @@ class Site {
 		addressSpace.innerHTML = `${this.address}, ${this.state}, ${this.zipcode}`
 
 		let descriptionSpace = document.createElement('p')
-		descriptionSpace = this.description
+		descriptionSpace.innerHTML = this.description
 		
+		let visited = document.createElement('p')
+		visited.innerHTML= this.visited
+
 		let writingPrompt = document.createElement('p')
 		writingPrompt.innerHTML = "Click here to write about this site."
 		writingPrompt.setAttribute('class', 'open-writing-form' )
 		writingPrompt.setAttribute('building-data-id', `${this.id}` )
+
+
 		//when clicked a  form/ 
 		
 		//add other attributes, like the visited boolean 
@@ -51,7 +56,6 @@ class Site {
 		//attach siteDiv to main section
 		const main = document.getElementById("underground-railroad-cards")
 		main.appendChild(siteDiv)
-
 	}
 }
 Site.allSites = []

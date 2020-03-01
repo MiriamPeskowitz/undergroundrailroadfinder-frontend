@@ -28,12 +28,12 @@ class Site {
 	saveInput.setAttribute('value', 'save')		
 			
 	const noteFormSection = document.querySelector("#note-form")
-	
+
 	//add three elements to noteFormSection
 	noteFormSection.appendChild(titleInput)
 	noteFormSection.appendChild(bodyInput)
 	noteFormSection.appendChild(saveInput)
-		
+		//still need to get data about the form, to open  
 	}
 
 	submitNewNote = () => {
