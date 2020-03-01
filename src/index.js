@@ -28,18 +28,15 @@ function loadAllCards() {
 
 	}
 
-let write = document.getElementsByClassName('.open-writing-form')
 //need to get the event.target or something else, this is where it gets complex. but add the form first 
 
-write.addEventListener('click', (event) => console.log('here')
-	// () => {
-	// openJournal()}
-)
+
+
 
 const openNewNote = (event) => {
 			
 	console.log('writingForm')
-	
+
 	//insert "form" with title, body 
 	//is this a new class? note.js yes. 
 	// andit will need a Post fetch, with options 

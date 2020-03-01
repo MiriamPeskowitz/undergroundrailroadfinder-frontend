@@ -9,6 +9,8 @@ class Site {
 		this.description = siteObject.description 
 		this.visited = siteObject.visited
 		this.image = siteObject.image
+		// this.renderNoteForm = siteObject.renderNoteForm// trying to solve problem: how do I bring in this object
+		//since note is associated with site 
 		Site.allSites.push(this)//clarify what this does and whether I need it 
 	}
 
@@ -39,7 +41,8 @@ class Site {
 		writingPrompt.innerHTML = "Click here to write about this site."
 		writingPrompt.setAttribute('class', 'open-writing-form' )
 		writingPrompt.setAttribute('building-data-id', `${this.id}` )
-
+		writingPrompt.addEventListener('click', () => renderNoteForm())
+		//how will site.js know about renderNoteForm, which is created on note.js? 
 
 		//when clicked a  form/ 
 		
