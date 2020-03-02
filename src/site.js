@@ -14,7 +14,39 @@ class Site {
 		Site.allSites.push(this)//clarify what this does and whether I need it 
 	}
 
-	renderSiteCard = () => {
+	
+	// writingPrompt.addEventListener('click', () => renderNoteForm())
+	renderNoteForm = (name, id) => {
+		//takes in a userId and a siteId
+		//1 add form to html 
+		const noteForm = document.createElement("form");
+		
+		const titleInput = document.createElement("input");
+		titleInput.setAttribute('type', 'text')
+		titleInput.setAttribute('name', 'title')
+		titleInput.setAttribute('data-id', 'id')
+		titleInput.setAttribute('placeholder', 'id')
+				//label
+				
+		const bodyInput = document.createElement('textarea')	
+		bodyInput.setAttribute('name', 'body')
+		bodyInput.setAttribute('placeholder', 'Your words go here')	
+				//label
+				
+		const saveInput = document.createElement('input')
+		saveInput.setAttribute('type', 'submit')
+		saveInput.setAttribute('value', 'save')		
+			
+		const attachForm = document.querySelector("#open-writing-form")
+
+		//add three elements to noteFormSection
+		attachForm.appendChild(noteForm)
+		attachForm.appendChild(titleInput)
+		attachForm.appendChild(bodyInput)
+		attachForm.appendChild(saveInput)
+		//still need to get data about the form, to open  
+	}
+renderSiteCard = () => {
 		//create container card for each site  
 		let siteDiv = document.createElement('div')
 		siteDiv.setAttribute('class', 'site-card' )
@@ -41,9 +73,8 @@ class Site {
 		writingPrompt.innerHTML = "Click here to write about this site."
 		writingPrompt.setAttribute('class', 'open-writing-form' )
 		writingPrompt.setAttribute('building-data-id', `${this.id}` )
-		writingPrompt.addEventListener('click', () => renderNoteForm())
 		//how will site.js know about renderNoteForm, which is created on note.js? 
-
+		writingPrompt.addEventListener('click', renderNoteForm(nameSpace, building-data-id))
 		//when clicked a  form/ 
 		
 		//add other attributes, like the visited boolean 
@@ -60,6 +91,9 @@ class Site {
 		const main = document.getElementById("underground-railroad-cards")
 		main.appendChild(siteDiv)
 	}
+	
+	
+
 }
 Site.allSites = []
 

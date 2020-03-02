@@ -27,21 +27,34 @@ function loadAllCards() {
 		})
 
 	}
+ 
+ // function openWritingForm() {
+
+	//  (".open-writing-form").addEventListener('click', () => renderNoteForm())
+ // }
 
 //need to get the event.target or something else, this is where it gets complex. but add the form first 
 
+// function saveNewNote() {
+// 	fetch(...)
+// }
 
+		// writingPrompt.addEventListener('click', () => renderNoteForm())
 
 
 const openNewNote = (event) => {
 			
 	console.log('writingForm')
 
+}
+	//when clicked, add a writing form to the DOM -- renderNoteForm, 
+	//which has a submit, which calls a fetch post 
+
 	//insert "form" with title, body 
-	//is this a new class? note.js yes. 
+	
 	// andit will need a Post fetch, with options 
 
-}
+
 
 		//HERE< old way was the long stretch of code, new will be the 
 			//make an instance of the class sitecard class )

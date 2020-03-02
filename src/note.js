@@ -1,4 +1,4 @@
-class Site {
+class Note {
 	constructor(noteObject) {
 		this.id = noteObject.id
 		this.title = noteObject.title
@@ -7,36 +7,57 @@ class Site {
 		this.siteId = siteObject.site_id
 		// Note.allNotes.push(this)//clarify what this does and whether I need it 
 	}
-	renderNoteForm = (siteId) => {
-		//takes in a userId and a siteId
-		//1 add form to html 
-		const f = document.createElement("form");
-		
-		const titleInput = document.createElement("input");
-		titleInput.setAttribute('type', 'text')
-		titleInput.setAttribute('name', 'title')
-		titleInput.setAttribute('placeholder', 'title/site name')
-				//label
-				
-		const bodyInput = document.createElement('textarea')	
-		bodyInput.setAttribute('name', 'body')
-		bodyInput.setAttribute('placeholder', 'Your words go here')	
-				//label
-				
-		const saveInput = document.createElement('input')
-		saveInput.setAttribute('type', 'submit')
-		saveInput.setAttribute('value', 'save')		
-			
-		const noteFormSection = document.querySelector("#note-form")
-
-		//add three elements to noteFormSection
-		noteFormSection.appendChild(titleInput)
-		noteFormSection.appendChild(bodyInput)
-		noteFormSection.appendChild(saveInput)
-		//still need to get data about the form, to open  
-	}
-
+	
+	
 	submitNewNote = () => {
 		//fetch post 
 	}
 }
+
+
+
+
+// const addNewToy = (toy) => { //toy = event.target
+     
+//     let configObject = {
+//         method: "POST",
+//         headers: {
+//             "Content-Type": "application/json",
+//             "Accept": "application/json"
+//         },
+//         body: JSON.stringify({
+//             'name': toy.name.value,
+//             'image': toy.image.value,
+//             'likes': 0
+//         })
+//     }
+
+//   fetch(url, configObject)
+// 	.then(response => response.json())
+// 	.then(data => {
+// 		createToyCard(data)
+// 	})
+// 	.catch(error => console.log(error.message))
+// }
+
+
+	// const configObjectPatch = {
+ //        method: "PATCH",
+ //        headers: {
+ //            "Content-Type": "application/json",
+ //            "Accept": "application/json"
+ //        },
+ //        body: JSON.stringify({
+ //            'likes': newLikes////figure out how to capture current likes 
+ //        })
+ //    }
+
+ // console.log("newLikes: ", newLikes)
+	// fetch(url, configObjectPatch)
+	// 	.then(response => response.json())
+	// 	.then(data => {(data.likes)
+	// 		// event.target.previousElementSibling.innerHTML = `${newLikes} likes`
+	// 		// why isn't newLikes coming in here? 
+	// 		// const id = event.target.id
+	// 		likes.innerHTML = `${newLikes} likes`
+	// 	})
