@@ -37,13 +37,20 @@ class Site {
 		saveInput.setAttribute('type', 'submit')
 		saveInput.setAttribute('value', 'save')		
 			
-		const attachForm = document.querySelector("#open-writing-form")
+		const attachForm = document.querySelector(".site-card")
 
 		//add three elements to noteFormSection
 		attachForm.appendChild(noteForm)
 		attachForm.appendChild(titleInput)
 		attachForm.appendChild(bodyInput)
 		attachForm.appendChild(saveInput)
+
+
+		let newNote = document.createElement('section')
+		let title = document.createElement('h3')
+		let body = document.createElement('')
+		newNote.appendChild(title)
+		newNote.appendChild(body)
 		//still need to get data about the form, to open  
 	}
 renderSiteCard = () => {
@@ -74,9 +81,9 @@ renderSiteCard = () => {
 		writingPrompt.setAttribute('class', 'open-writing-form' )
 		writingPrompt.setAttribute('building-data-id', `${this.id}` )
 		//how will site.js know about renderNoteForm, which is created on note.js? 
-		writingPrompt.addEventListener('click', renderNoteForm(nameSpace, building-data-id))
+		// writingPrompt.addEventListener('click', renderNoteForm(nameSpace, building-data-id))
 		//when clicked a  form/ 
-		
+
 		//add other attributes, like the visited boolean 
 
 		//put it all together

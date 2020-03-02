@@ -12,6 +12,8 @@ let card = document.querySelector(".underground-railroad-cards")
 document.addEventListener('DOMContentLoaded', () => {
 	//Should it do anything else on load? 
 	loadAllCards()
+	attachWritingForm()
+
 })
 
 
@@ -28,6 +30,15 @@ function loadAllCards() {
 
 	}
  
+
+ //click on open-writing-form, 
+ //then in the div write-here gets filled in and put on page , with the form 
+
+ function attachWritingForm() {
+ 	const writingForm = querySelector(".open-writing-form")
+ 	writingForm.addEventListener('click', () => console.log('got here'))
+ 	// renderNoteForm(nameSpace, building-data-id) START HERE 
+ }
  // function openWritingForm() {
 
 	//  (".open-writing-form").addEventListener('click', () => renderNoteForm())

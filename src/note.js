@@ -9,10 +9,15 @@ class Note {
 	}
 	
 	
-	submitNewNote = () => {
-		//fetch post 
-	}
+	// submitNewNote = () => {
+	// 	//fetch post 
+	// }
+	// renderNoteTemplate = () => {
+		
+	// }
 }
+
+
 
 
 
