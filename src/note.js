@@ -15,6 +15,9 @@ class Note {
 	// renderNoteTemplate = () => {
 		
 	// }
+	
+
+
 }
 
 

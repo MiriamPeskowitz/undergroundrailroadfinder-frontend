@@ -9,51 +9,16 @@ class Site {
 		this.description = siteObject.description 
 		this.visited = siteObject.visited
 		this.image = siteObject.image
+		this.noteTitle = siteObject.notes.title
+		this.noteBody = siteObject.notes.body
 		// this.renderNoteForm = siteObject.renderNoteForm// trying to solve problem: how do I bring in this object
 		//since note is associated with site 
 		Site.allSites.push(this)//clarify what this does and whether I need it 
 	}
 
 	
-	// writingPrompt.addEventListener('click', () => renderNoteForm())
-	renderNoteForm = (name, id) => {
-		//takes in a userId and a siteId
-		//1 add form to html 
-		const noteForm = document.createElement("form");
-		
-		const titleInput = document.createElement("input");
-		titleInput.setAttribute('type', 'text')
-		titleInput.setAttribute('name', 'title')
-		titleInput.setAttribute('data-id', 'id')
-		titleInput.setAttribute('placeholder', 'id')
-				//label
-				
-		const bodyInput = document.createElement('textarea')	
-		bodyInput.setAttribute('name', 'body')
-		bodyInput.setAttribute('placeholder', 'Your words go here')	
-				//label
-				
-		const saveInput = document.createElement('input')
-		saveInput.setAttribute('type', 'submit')
-		saveInput.setAttribute('value', 'save')		
-			
-		const attachForm = document.querySelector(".site-card")
 
-		//add three elements to noteFormSection
-		attachForm.appendChild(noteForm)
-		attachForm.appendChild(titleInput)
-		attachForm.appendChild(bodyInput)
-		attachForm.appendChild(saveInput)
-
-
-		let newNote = document.createElement('section')
-		let title = document.createElement('h3')
-		let body = document.createElement('')
-		newNote.appendChild(title)
-		newNote.appendChild(body)
-		//still need to get data about the form, to open  
-	}
-renderSiteCard = () => {
+	renderSiteCard = () => {
 		//create container card for each site  
 		let siteDiv = document.createElement('div')
 		siteDiv.setAttribute('class', 'site-card' )
@@ -76,10 +41,25 @@ renderSiteCard = () => {
 		let visited = document.createElement('p')
 		visited.innerHTML= this.visited
 
-		let writingPrompt = document.createElement('p')
-		writingPrompt.innerHTML = "Click here to write about this site."
-		writingPrompt.setAttribute('class', 'open-writing-form' )
+		let writingPrompt = document.createElement('section')
+
+		writingPrompt.innerHTML = "Write about this site, its story, your story of seeing it. Who are the people in the story? How does this site tell the story of those people? Would you tell it differently? How does this place fit into other places and histories you've seen and know?"
+		writingPrompt.setAttribute('class', 'writing-form' )
 		writingPrompt.setAttribute('building-data-id', `${this.id}` )
+		
+
+		//nmake this a form . 
+		let title = document.createElement('h2')
+
+		title.innerHTML = "title"
+		writingPrompt.appendChild(title)
+
+		
+		let noteBody = document.createElement('p')
+		noteBody.innerHTML = "text here"
+		writingPrompt.appendChild(noteBody)
+		
+
 		//how will site.js know about renderNoteForm, which is created on note.js? 
 		// writingPrompt.addEventListener('click', renderNoteForm(nameSpace, building-data-id))
 		//when clicked a  form/ 
@@ -94,14 +74,24 @@ renderSiteCard = () => {
 		siteDiv.append(writingPrompt)
 		
 
+
 		//attach siteDiv to main section
 		const main = document.getElementById("underground-railroad-cards")
 		main.appendChild(siteDiv)
-	}
-	
-	
+		
+		renderNewNote()
+		// console.log("second")
+		
+		}
+
 
 }
+// 		//takes in a userId and a siteId
+// 		//1 add form to html 
+// 		console.log('renderNoteForm')
+		
+
+
 Site.allSites = []
 
 

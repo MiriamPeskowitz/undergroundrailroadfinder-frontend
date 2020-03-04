@@ -1,6 +1,3 @@
-//how should I start? by sketching what I want it to look like and do 
-//on window load, do I see a signin? 
-
 const baseURL = "http://localhost:3000/"
 const usersURL = `${baseURL}/users`
 const sitesURL = `${baseURL}/sites` 
@@ -8,14 +5,13 @@ const notesURL = `${baseURL}/notes`
 
 let card = document.querySelector(".underground-railroad-cards")
 
-
 document.addEventListener('DOMContentLoaded', () => {
-	//Should it do anything else on load? 
 	loadAllCards()
-	attachWritingForm()
-
 })
 
+
+// const newNote =  document.querySelector("section.open-writing-form")
+// newNote.addEventListener('click', () => console.log('here'))
 
 function loadAllCards() {
     fetch(sitesURL)
@@ -27,18 +23,72 @@ function loadAllCards() {
 				card = newSite.renderSiteCard()
 			})
 		})
+		.catch(error => {
+			alert("Uh-oh, try again.")
+			console.log(error.message)
+		}) 
 
-	}
- 
+}
+
+function renderNewNote() { //wby does this work here, but not when I put in the other js files? 
+	 	
+	 	// should be note form, with border around it. 
+	 	// submit -- gathers data and invokes postNewNote -- in note.json
+	
+	console.log('got to renderNewNote')
+	
+	const noteForm = document.createElement("form");
+	
+	const titleInput = document.createElement("input");
+	titleInput.setAttribute('type', 'text')
+	titleInput.setAttribute('name', 'title')
+	titleInput.setAttribute('data-id', 'id')
+	titleInput.setAttribute('placeholder', 'id')
+	//label
+			
+	const bodyInput = document.createElement('textarea')	
+	bodyInput.setAttribute('name', 'body')
+	bodyInput.setAttribute('placeholder', 'Your words go here')	
+	//label
+			
+	const saveInput = document.createElement('input')
+	saveInput.setAttribute('type', 'submit')
+	saveInput.setAttribute('value', 'save')		
+		
+	//attach all to form 
+	const attachForm = document.querySelector('.writing-form')
+	attachForm.appendChild(noteForm)
+	attachForm.appendChild(titleInput)
+	attachForm.appendChild(bodyInput)
+	attachForm.appendChild(saveInput)
+
+}
+
+//then, a way to see all your writing, and make it into something longer. 
+//reflections on spaces 
+//next: I've made this about sites near me. Next, I want to head down the Maryland's eastern shore... 
+
+
+// async function addEL() {
+// 	let render = await renderSiteCard()
+// 	return await response
+// 	window.addEventListener('load', (event) => {
+// 	console.log('loaded')
+// 	const addHere = document.querySelector('underground-railroad-cards')
+// 	const newP = document.createElement('p')
+// 	newP.innerHTML = "new element"
+// 	addHere.appendChild(newP)
+	
+// 	})
+// }
+
 
  //click on open-writing-form, 
  //then in the div write-here gets filled in and put on page , with the form 
 
- function attachWritingForm() {
- 	const writingForm = querySelector(".open-writing-form")
- 	writingForm.addEventListener('click', () => console.log('got here'))
+ 
  	// renderNoteForm(nameSpace, building-data-id) START HERE 
- }
+
  // function openWritingForm() {
 
 	//  (".open-writing-form").addEventListener('click', () => renderNoteForm())
@@ -53,11 +103,11 @@ function loadAllCards() {
 		// writingPrompt.addEventListener('click', () => renderNoteForm())
 
 
-const openNewNote = (event) => {
+// const openNewNote = (event) => {
 			
-	console.log('writingForm')
+// 	console.log('writingForm')
 
-}
+// }
 	//when clicked, add a writing form to the DOM -- renderNoteForm, 
 	//which has a submit, which calls a fetch post 
 
