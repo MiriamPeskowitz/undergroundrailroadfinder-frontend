@@ -36,35 +36,23 @@ class Site {
 		addressSpace.innerHTML = `${this.address}, ${this.state}, ${this.zipcode}`
 
 		let descriptionSpace = document.createElement('p')
-		descriptionSpace.innerHTML = this.description
+		descriptionSpace.innerHTML = `"${this.description}"`
 		
-		let visited = document.createElement('p')
-		visited.innerHTML= this.visited
+		//visited -- will be a checkbox and these can be added up for a running total 
+		// let visited = document.createElement('p')
+		// visited.innerHTML= `visited: ${this.visited}`
 
 		let writingPrompt = document.createElement('section')
 
-		writingPrompt.innerHTML = "Write about this site, its story, your story of seeing it. Who are the people in the story? How does this site tell the story of those people? Would you tell it differently? How does this place fit into other places and histories you've seen and know?"
+		writingPrompt.innerHTML = "Now, write about this site, its story, your story of seeing it. Try these prompts if you need: Who are the people in the story? How does this site tell the story of those people? Would you tell it differently? How does this place fit into other places and histories you've seen and know?"
 		writingPrompt.setAttribute('class', 'writing-form' )
 		writingPrompt.setAttribute('building-data-id', `${this.id}` )
-		
-
-		//nmake this a form . 
-		let title = document.createElement('h2')
-
-		title.innerHTML = "title"
-		writingPrompt.appendChild(title)
-
-		
-		let noteBody = document.createElement('p')
-		noteBody.innerHTML = "text here"
-		writingPrompt.appendChild(noteBody)
 		
 
 		//how will site.js know about renderNoteForm, which is created on note.js? 
 		// writingPrompt.addEventListener('click', renderNoteForm(nameSpace, building-data-id))
 		//when clicked a  form/ 
 
-		//add other attributes, like the visited boolean 
 
 		//put it all together
 		siteDiv.append(img)
@@ -72,15 +60,12 @@ class Site {
 		siteDiv.append(addressSpace)
 		siteDiv.append(descriptionSpace)
 		siteDiv.append(writingPrompt)
-		
-
 
 		//attach siteDiv to main section
 		const main = document.getElementById("underground-railroad-cards")
 		main.appendChild(siteDiv)
 		
 		renderNewNote()
-		// console.log("second")
 		
 		}
 
