@@ -42,18 +42,18 @@ class Site {
 		// let visited = document.createElement('p')
 		// visited.innerHTML= `visited: ${this.visited}`
 
-		let writingPrompt = document.createElement('section')
+		let note = document.createElement('section')
 
-		writingPrompt.innerHTML = "Writing prompt: free-write about this site, its story, your story of seeing it. Try these prompts if you need: Who are the people in the story? How does this site tell the story of those people? Would you tell it differently? How does this place fit into other places and histories you've seen and know?"
-		writingPrompt.setAttribute('class', 'writing-form' )
-		writingPrompt.setAttribute('building-data-id', `${this.id}` )
+		
+		note.setAttribute('class', 'note-form' )
+		note.setAttribute('building-data-id', `${this.id}` )
 		
 		//put it all together
 		siteDiv.append(img)
 		siteDiv.append(nameSpace)
 		siteDiv.append(addressSpace)
 		siteDiv.append(descriptionSpace)
-		siteDiv.append(writingPrompt)
+		siteDiv.append(note)
 		
 		//attach siteDiv to main section
 		const main = document.getElementById("underground-railroad-cards")
