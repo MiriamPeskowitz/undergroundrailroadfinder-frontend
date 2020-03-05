@@ -8,7 +8,9 @@ class Note {
 		// Note.allNotes.push(this)//clarify what this does and whether I need it 
 	}
 	
-	
+	renderNewNoteForm() {
+		console.log('note.js form ')
+	}
 	// submitNewNote = () => {
 	// 	//fetch post 
 	// }

@@ -44,37 +44,32 @@ class Site {
 
 		let writingPrompt = document.createElement('section')
 
-		writingPrompt.innerHTML = "Now, write about this site, its story, your story of seeing it. Try these prompts if you need: Who are the people in the story? How does this site tell the story of those people? Would you tell it differently? How does this place fit into other places and histories you've seen and know?"
+		writingPrompt.innerHTML = "Writing prompt: free-write about this site, its story, your story of seeing it. Try these prompts if you need: Who are the people in the story? How does this site tell the story of those people? Would you tell it differently? How does this place fit into other places and histories you've seen and know?"
 		writingPrompt.setAttribute('class', 'writing-form' )
 		writingPrompt.setAttribute('building-data-id', `${this.id}` )
 		
-
-		//how will site.js know about renderNoteForm, which is created on note.js? 
-		// writingPrompt.addEventListener('click', renderNoteForm(nameSpace, building-data-id))
-		//when clicked a  form/ 
-
-
 		//put it all together
 		siteDiv.append(img)
 		siteDiv.append(nameSpace)
 		siteDiv.append(addressSpace)
 		siteDiv.append(descriptionSpace)
 		siteDiv.append(writingPrompt)
-
+		
 		//attach siteDiv to main section
 		const main = document.getElementById("underground-railroad-cards")
 		main.appendChild(siteDiv)
-		
-		renderNewNote()
-		
-		}
+		//render the note here
 
+		}
 
 }
 // 		//takes in a userId and a siteId
 // 		//1 add form to html 
 // 		console.log('renderNoteForm')
 		
+		//how will site.js know about renderNoteForm, which is created on note.js? 
+		// writingPrompt.addEventListener('click', renderNoteForm(nameSpace, building-data-id))
+		//when clicked a  form/ 
 
 
 Site.allSites = []

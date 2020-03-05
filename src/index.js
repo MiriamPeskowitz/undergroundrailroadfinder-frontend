@@ -23,46 +23,26 @@ function loadAllCards() {
 				card = newSite.renderSiteCard()
 			})
 		})
-		.catch(error => {
-			alert("Uh-oh, try again.")
-			console.log(error.message)
-		}) 
+		// .catch(error => {
+		// 	alert("Uh-oh, loadAllCards didn't work, try again. ")
+		// 	console.log(error.message)
+		// }) 
 
 }
-
 function renderNewNote() { //wby does this work here, but not when I put in the other js files? 
 	 	
 	 	// should be note form, with border around it. 
 	 	// submit -- gathers data and invokes postNewNote -- in note.json
 	
 	console.log('got to renderNewNote')
-	
-	const noteForm = document.createElement("form");
-	
-	const titleInput = document.createElement("input");
-	titleInput.setAttribute('type', 'text')
-	titleInput.setAttribute('name', 'title')
-	titleInput.setAttribute('data-id', 'id')
-	titleInput.setAttribute('placeholder', 'id')
-	//label
-			
-	const bodyInput = document.createElement('textarea')	
-	bodyInput.setAttribute('name', 'body')
-	bodyInput.setAttribute('placeholder', 'Your words go here')	
-	//label
-			
-	const saveInput = document.createElement('input')
-	saveInput.setAttribute('type', 'submit')
-	saveInput.setAttribute('value', 'save')		
-		
-	//attach all to form 
-	const attachForm = document.querySelector('.writing-form')
-	attachForm.appendChild(noteForm)
-	attachForm.appendChild(titleInput)
-	attachForm.appendChild(bodyInput)
-	attachForm.appendChild(saveInput)
+//fetch new notes 
 
+		// .catch(error => {
+		// 	alert("Uh-oh, try again.")
+		// 	console.log(error.message)
+		// }) 
 }
+
 
 //then, a way to see all your writing, and make it into something longer. 
 //reflections on spaces 
