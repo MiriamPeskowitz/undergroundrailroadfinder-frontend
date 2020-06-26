@@ -1,47 +1,62 @@
-const baseURL = "http://localhost:3000/"
-const usersURL = `${baseURL}/users`
-const sitesURL = `${baseURL}/sites` 
-const notesURL = `${baseURL}/notes`
+//change this index.js to 
+// document.addEventListener('DOMContentLoaded', () => {    
+// 	const app = new App();
+//   	app.attachEventListeners();
 
-let card = document.querySelector(".underground-railroad-cards")
+// 	app.adapter.fetchNotes()
+// 	  .then(app.createNotes)
+// })
 
 document.addEventListener('DOMContentLoaded', () => {
-	loadAllCards()
+	const app = new App()
+	// console.log("here")
+	app.attachEventListeners();
+
+	app.adapter.fetchSites()
+	// .then(app.createSites())
 })
+
+
+//old versions and code 
+// let card = document.querySelector(".underground-railroad-cards")
+
+// document.addEventListener('DOMContentLoaded', () => {
+// 	loadAllCards()
+// })
 
 
 // const newNote =  document.querySelector("section.open-writing-form")
 // newNote.addEventListener('click', () => console.log('here'))
 
-function loadAllCards() {
-    fetch(sitesURL)
-	    .then(response => response.json())
+// function loadAllCards() {
+//     fetch(sitesURL)
+// 	    .then(response => response.json())
 
-		.then(siteCardJSON => {
-			siteCardJSON.forEach((site) => {
-				const newSite = new Site(site)
-				card = newSite.renderSiteCard()
-			})
-		})
-		// .catch(error => {
-		// 	alert("Uh-oh, loadAllCards didn't work, try again. ")
-		// 	console.log(error.message)
-		// }) 
+// 		.then(siteCardJSON => {
+// 			siteCardJSON.forEach((site) => {
+// 				const newSite = new Site(site)
+// 				card = newSite.renderSiteCard()
+// 			})
+// 		})
+// 		// .catch(error => {
+// 		// 	alert("Uh-oh, loadAllCards didn't work, try again. ")
+// 		// 	console.log(error.message)
+// 		// }) 
 
-}
-function renderNewNote() { //wby does this work here, but not when I put in the other js files? 
+// }
+// function renderNewNote() { //wby does this work here, but not when I put in the other js files? 
 	 	
-	 	// should be note form, with border around it. 
-	 	// submit -- gathers data and invokes postNewNote -- in note.json
+// 	 	// should be note form, with border around it. 
+// 	 	// submit -- gathers data and invokes postNewNote -- in note.json
 	
-	console.log('got to renderNewNote')
-//fetch new notes 
+// 	console.log('got to renderNewNote')
+// //fetch new notes 
 
-		// .catch(error => {
-		// 	alert("Uh-oh, try again.")
-		// 	console.log(error.message)
-		// }) 
-}
+// 		// .catch(error => {
+// 		// 	alert("Uh-oh, try again.")
+// 		// 	console.log(error.message)
+// 		// }) 
+// }
 
 
 //then, a way to see all your writing, and make it into something longer. 
