@@ -16,114 +16,56 @@ class Site {
 		Site.allSites.push(this)//clarify what this does and whether I need it -- Creates the all 
 	}
 
-	renderListOfSites(sites) {
-		console.log('here')
-		return `
-			
-			 
-		let siteDiv = document.createElement('div')
-		siteDiv.setAttribute('class', 'site-card' )
-		siteDiv.setAttribute('data-id', `${this.id}` )
-		
-		//put data on the siteDiv. image, name, address, description, etc
-		let img = document.createElement('img')
-		img.src = this.image
-		img.alt = this.name
-
-		let nameSpace = document.createElement('p')
-		nameSpace.innerHTML = this.name
-		
-		let addressSpace = document.createElement('p')
-		addressSpace.innerHTML = `${this.address}, ${this.state}, ${this.zipcode}`
-
-		let descriptionSpace = document.createElement('p')
-		descriptionSpace.innerHTML = `"${this.description}"`
-		
-		//visited -- will be a checkbox and these can be added up for a running total 
-		// let visited = document.createElement('p')
-		// visited.innerHTML= `visited: ${this.visited}`
-
-		let note = document.createElement('section')
-
-		
-		note.setAttribute('class', 'note-form' )
-		note.setAttribute('building-data-id', `${this.id}` )
-		
-		//put it all together
-		siteDiv.append(img)
-		siteDiv.append(nameSpace)
-		siteDiv.append(addressSpace)
-		siteDiv.append(descriptionSpace)
-		siteDiv.append(note)
-		
-		//attach siteDiv to main section
-		const main = document.getElementById("underground-railroad-cards")
-		main.appendChild(siteDiv)
-		//render the note here
-		`	
+	renderSiteCards() {	
+		// console.log('${site.id}')
+		const text =  `
+			<p>${this.id}</p>
+			`
+		return text	
 	}
 
+	// card() {
+	// 	const cardText = `
+	// 	let siteDiv = document.createElement('div')
+	// 	siteDiv.setAttribute('class', 'site-card' )
+	// 	siteDiv.setAttribute('data-id', ${this.id} )
+		
+		
+	// 	let img = document.createElement('img')
+	// 	img.src = this.image
+	// 	img.alt = this.name
+
+	// 	let nameSpace = document.createElement('p')
+	// 	nameSpace.innerHTML = this.name
+		
+	// 	let addressSpace = document.createElement('p')
+	// 	addressSpace.innerHTML = ${this.address}, ${this.state}, ${this.zipcode}
+
+	// 	let descriptionSpace = document.createElement('p')
+	// 	descriptionSpace.innerHTML = "${this.description}"
+		
+	// 	//visited -- will be a checkbox and these can be added up for a running total 
+	// 	// let visited = document.createElement('p')
+	// 	// visited.innerHTML= `visited: ${this.visited}`
+
+	// 	let note = document.createElement('section')
+
+		
+	// 	note.setAttribute('class', 'note-form' )
+	// 	note.setAttribute('building-data-id', ${this.id} )
+		
+	// 	//put it all together
+	// 	siteDiv.append(img)
+	// 	siteDiv.append(nameSpace)
+	// 	siteDiv.append(addressSpace)
+	// 	siteDiv.append(descriptionSpace)
+	// 	siteDiv.append(note)
+		
+	// 	//attach siteDiv to main section
+	// 	const main = document.getElementById("underground-railroad-cards")
+	// 	main.appendChild(siteDiv)
+	// 	`
+	// }
+}	
 	
 Site.allSites = []
-
-// 	renderSiteCard = () => {
-// 		//create container card for each site  
-// 		return `
-// 		let siteDiv = document.createElement('div')
-// 		siteDiv.setAttribute('class', 'site-card' )
-// 		siteDiv.setAttribute('data-id', `${this.id}` )
-		
-// 		//put data on the siteDiv. image, name, address, description, etc
-// 		let img = document.createElement('img')
-// 		img.src = this.image
-// 		img.alt = this.name
-
-// 		let nameSpace = document.createElement('p')
-// 		nameSpace.innerHTML = this.name
-		
-// 		let addressSpace = document.createElement('p')
-// 		addressSpace.innerHTML = `${this.address}, ${this.state}, ${this.zipcode}`
-
-// 		let descriptionSpace = document.createElement('p')
-// 		descriptionSpace.innerHTML = `"${this.description}"`
-		
-// 		//visited -- will be a checkbox and these can be added up for a running total 
-// 		// let visited = document.createElement('p')
-// 		// visited.innerHTML= `visited: ${this.visited}`
-
-// 		let note = document.createElement('section')
-
-		
-// 		note.setAttribute('class', 'note-form' )
-// 		note.setAttribute('building-data-id', `${this.id}` )
-		
-// 		//put it all together
-// 		siteDiv.append(img)
-// 		siteDiv.append(nameSpace)
-// 		siteDiv.append(addressSpace)
-// 		siteDiv.append(descriptionSpace)
-// 		siteDiv.append(note)
-		
-// 		//attach siteDiv to main section
-// 		const main = document.getElementById("underground-railroad-cards")
-// 		main.appendChild(siteDiv)
-// 		//render the note here
-// 		`	
-// 		}
-
-// }
-// 		//takes in a userId and a siteId
-// 		//1 add form to html 
-// 		console.log('renderNoteForm')
-		
-		//how will site.js know about renderNoteForm, which is created on note.js? 
-		// writingPrompt.addEventListener('click', renderNoteForm(nameSpace, building-data-id))
-		//when clicked a  form/ 
-
-
-
-
-
-
-
-

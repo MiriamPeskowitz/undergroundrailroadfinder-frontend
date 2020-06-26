@@ -2,6 +2,7 @@ class App {
 	constructor() {
 		this.adapter = new Adapter()
 		this.createSites = this.createSites.bind(this)
+		this.addSites = this.addSites.bind(this)
 		this.attachEventListeners = this.attachEventListeners.bind(this)
 	
 	}
@@ -23,18 +24,22 @@ class App {
 		console.log('createSites')
 		sites.forEach(site => {
 			new Site(site)
+			// console.log(site)	
 		});
 		this.addSites()
 	}
 
 	addSites() {
-		console.log('got to add sites')
-		document.querySelector('#underground-railroad-cards').innerHTML = " "
-		Site.allSites.forEach(
-			site => (document.querySelector('#underground-railroad-cards').innerHTML += site.renderListOfSites())
+		console.log('addSites')
+	
+		document.querySelector('#underground-railroad-cards').innerHTML = ""
+		Site.allSites.forEach(site => ( document.querySelector('#underground-railroad-cards').innerHTML += site.renderSiteCards())
 		)
 	}
 }
+
+// document.querySelector('#underground-railroad-cards').innerHTML += site.renderSiteCards()
+
 	// createNotes(notes) {
 	// 	notes.forEach(note => {
 	// 		new Note(note)
