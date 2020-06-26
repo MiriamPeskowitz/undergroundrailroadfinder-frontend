@@ -3,12 +3,8 @@ class App {
 		this.adapter = new Adapter()
 		this.createSites = this.createSites.bind(this)
 		this.attachEventListeners = this.attachEventListeners.bind(this)
-		//bind all functions here 
+	
 	}
-
-	//make functions, starting with attachEventListeners 
-
-
 
  //  	this.handleEditClick = this.handleEditClick.bind(this)
  //  	this.handleFormSubmit = this.handleFormSubmit.bind(this)
@@ -23,8 +19,20 @@ class App {
 	// // grab updated title and content and send to db
  //    document.querySelector('#update').addEventListener('submit', this.handleFormSubmit)
  // }
-	createSites() {
+	createSites(sites) {
 		console.log('createSites')
+		sites.forEach(site => {
+			new Site(site)
+		});
+		this.addSites()
+	}
+
+	addSites() {
+		console.log('got to add sites')
+		document.querySelector('#underground-railroad-cards').innerHTML = " "
+		Site.allSites.forEach(
+			site => (document.querySelector('#underground-railroad-cards').innerHTML += site.renderListOfSites())
+		)
 	}
 }
 	// createNotes(notes) {

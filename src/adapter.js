@@ -11,7 +11,12 @@ class Adapter {
     }
 	}
 // Make all api fetches here 
-	fetchSites() { return this.get(`${this.sitesURL}`)}
+	fetchSites() { 
+		return  this.get(`${this.baseURL}/sites`)
+		
+
+		// return this.get(`${this.baseURL}/sites`)
+	}
 
 	get(url) { return fetch(url).then(res => res.json()) }
 
