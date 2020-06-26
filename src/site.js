@@ -18,12 +18,16 @@ class Site {
 
 	renderSiteCards() {	
 		// console.log('${site.id}')
-		const text =  `
+		const card =  `
+			
 			<p>${this.id}</p>
+			<p>${this.name}</p>
+			<img src=${this.image}>
+			<button data-id=${this.id}>Visit/Write about this site</button>	
 			`
-		return text	
+		return card	
 	}
-
+	
 	// card() {
 	// 	const cardText = `
 	// 	let siteDiv = document.createElement('div')
