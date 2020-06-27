@@ -5,6 +5,7 @@ class App {
 		this.addSites = this.addSites.bind(this)
 		this.openShowPage = this.openShowPage.bind(this)
 		this.attachEventListeners = this.attachEventListeners.bind(this)
+		this.handleFormSubmit = this.handleFormSubmit.bind(this)
 	}
 
  //  	this.handleEditClick = this.handleEditClick.bind(this)
@@ -13,6 +14,8 @@ class App {
 	attachEventListeners() {
 		console.log("attached")
 		document.querySelector('#underground-railroad-cards').addEventListener('click', this.openShowPage)
+		document.querySelector('#underground-railroad-cards').addEventListener('submit', this.handleFormSubmit)
+
 	}
  //  attachEventListeners() {
  //    document.querySelector('#notes-list').addEventListener('click', this.handleEditClick)
@@ -40,7 +43,22 @@ class App {
     const site = Site.findById(id)
     document.querySelector('#underground-railroad-cards').innerHTML= site.renderShowPage()
  	}	 
-
+	handleFormSubmit(e) {
+		e.preventDefault()
+		const id = parseInt(e.target.dataset.id)
+		const note = Note.findById(id) //Think about this 
+    const content = e.target.querySelector('textarea').value
+		const bodyJSON = {content}
+        
+        // backend responds with the updated note instance represented as JSON
+    this.adapter.updateNote(note.id, bodyJSON)//think about whether to keep it as site or note 
+    //all this -- think about what to do, may need to hash out the note.js section 
+     .then(updatedNote => {
+    		const note = Note.findById(updatedNote.id)
+    		note.update(updatedNote)
+    		this.addNotes()
+      })
+		}	   
 }
 
 // document.querySelector('#underground-railroad-cards').innerHTML += site.renderSiteCards()
