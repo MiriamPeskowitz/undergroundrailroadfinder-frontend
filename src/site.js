@@ -23,11 +23,37 @@ class Site {
 			<p>${this.id}</p>
 			<p>${this.name}</p>
 			<img src=${this.image}>
-			<button data-id=${this.id}>Visit/Write about this site</button>	
+			<button class="site-to-show-page-button" data-id=${this.id}>Visit/Write about this site</button>	
 			`
 		return card	
 	}
 	
+	renderShowPage() {
+		console.log('renderShowPage')
+		const writingCard =  `
+			<img src=${this.image}>
+			<form data-id=${this.id}>
+			   <label>Writing about ${this.name}</label>
+		       <p>
+		          <input type="text" value="${this.name}" />
+		       </p>
+		       <p>
+		       	 <label>Content</label>
+	  	          <textarea>${this.content}</textarea>
+		       </p>
+			<button type='submit'>Save Note</button>
+			</form>
+			`
+		return writingCard	
+	}
+
+	static findById(id) {
+		return this.allSites.find(site => site.id === id)
+	}
+}	
+	
+Site.allSites = []
+
 	// card() {
 	// 	const cardText = `
 	// 	let siteDiv = document.createElement('div')
@@ -70,6 +96,3 @@ class Site {
 	// 	main.appendChild(siteDiv)
 	// 	`
 	// }
-}	
-	
-Site.allSites = []

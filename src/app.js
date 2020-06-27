@@ -3,17 +3,16 @@ class App {
 		this.adapter = new Adapter()
 		this.createSites = this.createSites.bind(this)
 		this.addSites = this.addSites.bind(this)
+		this.openShowPage = this.openShowPage.bind(this)
 		this.attachEventListeners = this.attachEventListeners.bind(this)
-	
 	}
 
  //  	this.handleEditClick = this.handleEditClick.bind(this)
  //  	this.handleFormSubmit = this.handleFormSubmit.bind(this)
- //  	this.createNotes = this.createNotes.bind(this)
- //  	this.addNotes = this.addNotes.bind(this)
- //  }
+
 	attachEventListeners() {
 		console.log("attached")
+		document.querySelector('#underground-railroad-cards').addEventListener('click', this.openShowPage)
 	}
  //  attachEventListeners() {
  //    document.querySelector('#notes-list').addEventListener('click', this.handleEditClick)
@@ -24,18 +23,24 @@ class App {
 		console.log('createSites')
 		sites.forEach(site => {
 			new Site(site)
-			// console.log(site)	
 		});
 		this.addSites()
 	}
 
 	addSites() {
 		console.log('addSites')
-	
 		document.querySelector('#underground-railroad-cards').innerHTML = ""
 		Site.allSites.forEach(site => ( document.querySelector('#underground-railroad-cards').innerHTML += site.renderSiteCards())
 		)
 	}
+
+	openShowPage(e) {
+		console.log("openShowPage")
+    const id = parseInt(e.target.dataset.id)
+    const site = Site.findById(id)
+    document.querySelector('#underground-railroad-cards').innerHTML= site.renderShowPage()
+ 	}	 
+
 }
 
 // document.querySelector('#underground-railroad-cards').innerHTML += site.renderSiteCards()
