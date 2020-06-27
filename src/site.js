@@ -32,14 +32,10 @@ class Site {
 		console.log('renderShowPage')
 		const writingCard =  `
 			<img src=${this.image}>
+			<p> ${this.description} </p> 
 			<form data-id=${this.id}>
-			   <label>Writing about ${this.name}</label>
-		       <p>
-		          <input type="text" value="${this.name}" />
-		       </p>
-		       <p>
-		       	 <label>Content</label>
-	  	          <textarea>${this.content}</textarea>
+			   <label>My Writing about ${this.name}</label><br><br>
+	  	       <textarea id="note name="note" rows="50" cols="50"></textarea>
 		       </p>
 			<button type='submit'>Save Note</button>
 			</form>
@@ -48,7 +44,7 @@ class Site {
 	}
 
 	static findById(id) {
-		return this.allSites.find(site => site.id === id)
+	  return this.allSites.find(site => site.id === id)
 	}
 }	
 	
