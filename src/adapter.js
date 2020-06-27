@@ -16,22 +16,23 @@ class Adapter {
 		return this.get(`${this.baseURL}/sites`)
 	}
 	
-	get(url) { return fetch(url).then(res => res.json()) }
+	get(url) { return fetch(url).then(res => res.json()).catch((err) => console.log(err)) }
 
 	// updateNote(id, body) { return this.patch(`${this.baseUrl}/${id}`, body)}
 
-	postNewNote(url, content) {
+	postNewNote(url, body) {
 		fetch(`${this.baseURL}/sites`, {
 			method: 'POST',
 			headers: this.headers,
-			body: JSON.stringify({content})
-		}).then(res => res.json()).catch()
+			body: JSON.stringify(body)
+		}).then(res => res.json())
+		.catch((err) => console.log(err))
 	}
 
 //Add this to end of fetch, get 
-  catch() {
-  	catch((err) => console.log(err))
-  }
+  // catch() {
+  // 	catch((err) => console.log(err))
+  // }
 	// patch(url, body) {
 	// 	return fetch(url, {
 	// 		method: 'PATCH',

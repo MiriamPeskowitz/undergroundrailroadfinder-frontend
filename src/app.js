@@ -16,6 +16,7 @@ class App {
 		document.querySelector('#underground-railroad-cards').addEventListener('click', this.openShowPage)
 		document.querySelector('#underground-railroad-cards').addEventListener('submit', this.handleFormSubmit)
 
+
 	}
  //  attachEventListeners() {
  //    document.querySelector('#notes-list').addEventListener('click', this.handleEditClick)
@@ -49,9 +50,9 @@ class App {
 		const note = Note.findById(id) //Think about this 
     const content = e.target.querySelector('textarea').value
 		const bodyJSON = {content}
-        
+        // START HERE< BUILD OUT NOTES, maybe user and profile first? 
         // backend responds with the updated note instance represented as JSON
-    this.adapter.updateNote(note.id, bodyJSON)//think about whether to keep it as site or note 
+    this.adapter.postNewNote(note.id, bodyJSON)//think about whether to keep it as site or note 
     //all this -- think about what to do, may need to hash out the note.js section 
      .then(updatedNote => {
     		const note = Note.findById(updatedNote.id)
