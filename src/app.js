@@ -6,6 +6,7 @@ class App {
 		this.openShowPage = this.openShowPage.bind(this)
 		this.attachEventListeners = this.attachEventListeners.bind(this)
 		this.handleFormSubmit = this.handleFormSubmit.bind(this)
+		// this.renderSignUpForm = this.renderSignUpForm.bind(this)
 	}
 
  //  	this.handleEditClick = this.handleEditClick.bind(this)
@@ -15,7 +16,7 @@ class App {
 		console.log("attached")
 		document.querySelector('#underground-railroad-cards').addEventListener('click', this.openShowPage)
 		document.querySelector('#underground-railroad-cards').addEventListener('submit', this.handleFormSubmit)
-
+		document.querySelector('#signIn').addEventListener('click', this.renderSignUpForm)
 
 	}
  //  attachEventListeners() {
@@ -59,8 +60,9 @@ class App {
     		note.update(updatedNote)
     		this.addNotes()
       })
-		}	   
+	}	   
 }
+	
 
 // document.querySelector('#underground-railroad-cards').innerHTML += site.renderSiteCards()
 
