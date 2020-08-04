@@ -9,11 +9,9 @@ class Site {
 		this.description = siteObject.description 
 		this.visited = siteObject.visited
 		this.image = siteObject.image
-		this.noteTitle = siteObject.notes.title
-		this.noteBody = siteObject.notes.body
-		// this.renderNoteForm = siteObject.renderNoteForm// trying to solve problem: how do I bring in this object
-		//since note is associated with site 
-		Site.allSites.push(this)//clarify what this does and whether I need it -- Creates the all 
+		// this.noteTitle = siteObject.notes.title
+		// this.noteBody = siteObject.notes.body
+		Site.allSites.push(this)
 	}
 
 	renderSiteCards() {	

@@ -5,20 +5,12 @@ class Note {
 		this.body = noteObject.body
 		this.userId = siteObject.user_id
 		this.siteId = siteObject.site_id
-		// Note.allNotes.push(this)//clarify what this does and whether I need it 
+		// Note.allNotes.push(this) 
 	}
 	
 	renderNewNoteForm() {
 		console.log('note.js form ')
 	}
-	// submitNewNote = () => {
-	// 	//fetch post 
-	// }
-	// renderNoteTemplate = () => {
-		
-	// }
-	
-
 
 }
 
