@@ -33,13 +33,17 @@ class Site {
 			<p> ${this.description} </p> 
 			<form data-id=${this.id}>
 			   <label>My Writing about ${this.name}</label><br><br>
-	  	       <textarea id="note name="note" rows="50" cols="50"></textarea>
+
+	  	       <textarea id="note" name="note" rows="50" cols="50"></textarea>
 		       </p>
 			<button type='submit'>Save Note</button>
+			<button id="return-to-list">Return to List (w/o saving)</button>
 			</form>
 			`
 		return writingCard	
 	}
+// missing " after id but when I fix it I get a bunch of errors??? 
+
 
 	static findById(id) {
 	  return this.allSites.find(site => site.id === id)

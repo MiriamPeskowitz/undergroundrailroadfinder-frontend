@@ -1,3 +1,41 @@
+— clone and see what I have so far. Make list of bugs and of features to build 
+	-- error message about i18n-- keeping this here in case I get weird errors later 
+	HEADS UP! i18n 1.1 changed fallbacks to exclude default locale.
+But that may break your application.
+
+If you are upgrading your Rails application from an older version of Rails:
+
+Please check your Rails app for 'config.i18n.fallbacks = true'.
+If you're using I18n (>= 1.1.0) and Rails (< 5.2.2), this should be
+'config.i18n.fallbacks = [I18n.default_locale]'.
+If not, fallbacks will be broken in your app by I18n 1.1.x.
+
+
+
+— make new branch on both back and front. DONE
+
+-- study group questions: devise? devise_jwt? adding
+
+-- what doesn't work currently? 
+	--feature: Save Note after you've written it
+
+-- what's weird? 
+	1. too many classes -- could have one class, with associations 
+	2. needs a way to get back -- on each card, next to return to list/w/o saving. 
+	
+— make list of requirements or find it — that I still need to install 
+— (AT SOME point, clean up my development/code folder, including all the project files 
+— keeping my code for syllabus on other window. 
+
+Next features: add more current sites of resistance activity: Octavius Catto statue; sites from the BLM protests in June and July + the encampment; the student protests in the 70s. Maybe there are blocks that are opened up once you complete each one, and it becomes a history of resistance. 
+
+
+
+
+
+
+
+Older: 
 1. create structure for OOJS
 2. Now what? 
 	-- all my methods are a mess. what do I need? 
